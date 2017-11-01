@@ -39,13 +39,12 @@ class Rating extends Model
      *
      * @return static
      */
-    public function createRating(Model $ratingable, $data, Model $author, $author_role = 'user')
+    public function createRating(Model $ratingable, $data, Model $author)
     {
         $rating = new static();
         $rating->fill(array_merge($data, [
             'author_id' => $author->id,
             'author_type' => get_class($author),
-            'author_role' => $author_role,
         ]));
 
         $ratingable->ratings()->save($rating);
@@ -60,14 +59,13 @@ class Rating extends Model
      *
      * @return static
      */
-    public function createUniqueRating(Model $ratingable, $data, Model $author, $author_role = 'user')
+    public function createUniqueRating(Model $ratingable, $data, Model $author)
     {
         $rating = [
             'author_id' => $author->id,
             'author_type' => get_class($author),
             "ratingable_id" => $ratingable->id,
             "ratingable_type" => get_class($ratingable),
-            'author_role' => $author_role,
         ];
 
         Rating::updateOrCreate($rating, $data);

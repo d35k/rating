@@ -11,7 +11,7 @@ composer require d35k/rating
 or add this in your project's composer.json file .
 ````
 "require": {
-  "d35k/Rating": "1.*",
+  "d35k/Rating": "^0",
 }
 ````
 
