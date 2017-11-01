@@ -12,7 +12,7 @@ class CreateRatingsTable extends Migration
             $table->integer('rating');
             $table->morphs('ratingable');
             $table->morphs('author');
-            $table->string('author_role');
+            $table->string('author_role')->nullable();
             $table->timestamps();
         });
     }
