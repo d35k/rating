@@ -1,12 +1,12 @@
 {
-    "name": "ghanem/rating",
+    "name": "d35k/rating",
     "description": "Rating syetem for Laravel 5",
     "keywords": ["rating", "Ratable", "laravel"],
     "license": "MIT",
     "authors": [
         {
-            "name": "abdullah ghanem",
-            "email": "3bdullah.ghanem@gmail.com"
+            "name": "Göktuğ Hatipoğlu",
+            "email": "goktughatipoglu@gmail.com"
         }
     ],
     "minimum-stability": "dev",
@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Ghanem\\Rating\\": "src/"
+            "d35k\\Rating\\": "src/"
         }
     }
 }

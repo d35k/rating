@@ -1,9 +1,4 @@
-[![Latest Stable Version](https://poser.pugx.org/ghanem/rating/v/stable.svg)](https://packagist.org/packages/ghanem/rating) [![License](https://poser.pugx.org/ghanem/rating/license.svg)](https://packagist.org/packages/ghanem/rating)
-
-[![Total Downloads](https://poser.pugx.org/ghanem/rating/downloads.svg)](https://packagist.org/packages/ghanem/rating)
-
 # Laravel Rating
-![https://scontent-cai1-1.xx.fbcdn.net/v/t31.0-8/18192521_1536772739688541_5883708562629992092_o.jpg?oh=281577e64a1e326ff1989f047ab21df6&oe=59BAEBCA](https://scontent-cai1-1.xx.fbcdn.net/v/t31.0-8/18192521_1536772739688541_5883708562629992092_o.jpg?oh=281577e64a1e326ff1989f047ab21df6&oe=59BAEBCA)
 Rating system for laravel 5
 
 ## Installation
@@ -11,12 +6,12 @@ Rating system for laravel 5
 First, pull in the package through Composer.
 
 ```js
-composer require ghanem/rating
+composer require d35k/rating
 ```
 or add this in your project's composer.json file .
 ````
 "require": {
-  "Ghanem/Rating": "1.*",
+  "d35k/Rating": "1.*",
 }
 ````
 
@@ -24,7 +19,7 @@ And then include the service provider within `app/config/app.php`.
 
 ```php
 'providers' => [
-    Ghanem\Rating\RatingServiceProvider::class
+    d35k\Rating\RatingServiceProvider::class
 ];
 ```
 
@@ -49,7 +44,7 @@ After the migration, one new table will be present, `ratings`.
 
 namespace App;
 
-use Ghanem\Rating\Traits\Ratingable as Rating;
+use d35k\Rating\Traits\Ratingable as Rating;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model implements Rating

@@ -1,8 +1,8 @@
 <?php 
 
-namespace ghanem\Rating;
+namespace d35k\Rating;
 
-use Ghanem\Rating\Commands\MigrationCommand;
+use d35k\Rating\Commands\MigrationCommand;
 use Illuminate\Support\ServiceProvider;
 
 class RatingServiceProvider extends ServiceProvider

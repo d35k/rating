@@ -1,8 +1,8 @@
 <?php
 
-namespace Ghanem\Rating\Traits;
+namespace d35k\Rating\Traits;
 
-use Ghanem\Rating\Models\Rating;
+use d35k\Rating\Models\Rating;
 use Illuminate\Database\Eloquent\Model;
 
 trait Ratingable

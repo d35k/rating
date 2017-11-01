@@ -1,6 +1,6 @@
 <?php
 
-namespace Ghanem\Rating\Models;
+namespace d35k\Rating\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

@@ -1,6 +1,6 @@
 <?php 
 
-namespace Ghanem\Rating\Commands;
+namespace d35k\Rating\Commands;
 
 use Illuminate\Console\Command;
 
