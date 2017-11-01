@@ -59,19 +59,23 @@ $user = User::first();
 $post = Post::first();
 
 $rating = $post->rating([
-    'rating' => 5
+    'rating' => 5,
+    'rating_question' => 'question',
+    'author_role' => 'role'
 ], $user);
 
 dd($rating);
 ```
 
-### Create or update a unique rating
+### Create or update a unique rating (Usefull for unknown question)
 ```php
 $user = User::first();
 $post = Post::first();
 
 $rating = $post->ratingUnique([
-    'rating' => 5
+    'rating' => 5,
+    'rating_question' => 'question',
+    'author_role' => 'role'
 ], $user);
 
 dd($rating);
@@ -101,6 +105,11 @@ $post->sumRating
 $post->avgRating
 
 // $post->avgRating() also works for this.
+````
+### fetch the average rating by filter:
+````php
+$post->avgRatingByFilter('column', 'filter')
+
 ````
 
 ### fetch the rating percentage. 

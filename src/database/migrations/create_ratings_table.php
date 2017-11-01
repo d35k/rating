@@ -11,6 +11,7 @@ class CreateRatingsTable extends Migration
             $table->increments('id');
             $table->integer('rating');
             $table->morphs('ratingable');
+            $table->string('rating_question')->nullable();
             $table->morphs('author');
             $table->string('author_role')->nullable();
             $table->timestamps();
