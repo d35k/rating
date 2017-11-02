@@ -14,7 +14,7 @@ class Rating extends Model
     /**
      * @var array
      */
-    protected $fillable = ['rating', 'ratingable_id' , 'ratingable_type' , 'author_id', 'author_type', 'author_role'];
+    protected $fillable = ['rating', 'ratingable_id' , 'ratingable_type' , 'author_id', 'author_type', 'author_role', 'rating_question'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\MorphTo
@@ -68,6 +68,27 @@ class Rating extends Model
             "ratingable_type" => get_class($ratingable),
         ];
 
+        Rating::updateOrCreate($rating, $data);
+        return $rating;
+    }
+
+    /**
+     * @param Model $ratingable
+     * @param $data
+     * @param Model $author
+     *
+     * @return static
+     */
+    public function createUniqueQuestionRating(Model $ratingable, $data, Model $author)
+    {
+        $rating = [
+            'author_id' => $author->id,
+            'author_type' => get_class($author),
+            "ratingable_id" => $ratingable->id,
+            "ratingable_type" => get_class($ratingable),
+            "rating_question" => $data["rating_question"],
+        ];
+        unset( $data["rating_question"] );
         Rating::updateOrCreate($rating, $data);
         return $rating;
     }

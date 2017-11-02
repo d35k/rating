@@ -100,6 +100,18 @@ trait Ratingable
     {
         return (new Rating())->createUniqueRating($this, $data, $author);
     }
+
+    /**
+     * @param $data
+     * @param Model      $author
+     * @param Model|null $parent
+     *
+     * @return static
+     */
+    public function ratingQuestionUnique($data, Model $author, Model $parent = null)
+    {
+        return (new Rating())->createUniqueQuestionRating($this, $data, $author);
+    }
     
     /**
      * @param $id
